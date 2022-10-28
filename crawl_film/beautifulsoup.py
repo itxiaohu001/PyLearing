@@ -35,4 +35,13 @@ soup = BeautifulSoup(fp, "lxml")
 # print(soup.select(".top-nav-info")[0].text)
 
 # 从标签中提取属性,返回第一个class值为nav的标签的id属性值
-print(soup.find(class_="nav")["id"])
+# print(soup.find(class_="nav")["id"])
+
+# 遍历文档树
+
+# 直接子节点
+# for child in soup.body.children:
+#     print(child)
+# 所有子节点
+for child in soup.body.descendants:
+    print(child)
